@@ -1,0 +1,385 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "欢迎使用大事件管理系统",
+      "content": "这是一个智能化的文章管理系统，支持 AI 辅助创作、实时协作等高级功能。系统基于 Vue 3 和 TypeScript 构建，提供了现代化的用户体验。",
+      "summary": "系统介绍和欢迎信息",
+      "tags": [
+        "欢迎",
+        "介绍",
+        "系统"
+      ],
+      "category": "系统",
+      "status": "published",
+      "createdAt": "2024-01-01T10:00:00.000Z",
+      "updatedAt": "2024-01-15T14:30:00.000Z",
+      "views": 156,
+      "likes": 23
+    },
+    {
+      "id": "2",
+      "title": "Vue 3 Composition API 深度解析",
+      "content": "Vue 3 的 Composition API 提供了更好的逻辑复用和类型推断。本文将深入探讨 ref、reactive、computed 等核心概念的使用方法和最佳实践。",
+      "summary": "深入理解 Vue 3 Composition API 的核心概念和使用技巧",
+      "tags": [
+        "Vue",
+        "前端",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "category": "技术",
+      "status": "published",
+      "createdAt": "2024-01-05T09:15:00.000Z",
+      "updatedAt": "2024-01-18T16:45:00.000Z",
+      "views": 342,
+      "likes": 45
+    },
+    {
+      "id": "3",
+      "title": "TypeScript 在大型项目中的应用",
+      "content": "TypeScript 提供了静态类型检查，大大提高了代码的可维护性。本文分享在大型前端项目中应用 TypeScript 的经验和技巧。",
+      "summary": "分享 TypeScript 在大型项目中的实践经验和最佳实践",
+      "tags": [
+        "TypeScript",
+        "前端",
+        "工程化"
+      ],
+      "category": "技术",
+      "status": "draft",
+      "createdAt": "2024-01-08T14:20:00.000Z",
+      "updatedAt": "2024-01-20T11:10:00.000Z",
+      "views": 89,
+      "likes": 12
+    },
+    {
+      "id": "4",
+      "title": "现代前端构建工具比较：Vite vs Webpack",
+      "content": "Vite 和 Webpack 都是流行的前端构建工具。本文从构建速度、开发体验、生态系统等方面进行详细比较，帮助你做出合适的选择。",
+      "summary": "对比分析 Vite 和 Webpack 的优缺点及适用场景",
+      "tags": [
+        "Vite",
+        "Webpack",
+        "构建工具",
+        "前端"
+      ],
+      "category": "技术",
+      "status": "published",
+      "createdAt": "2024-01-10T11:30:00.000Z",
+      "updatedAt": "2024-01-22T09:25:00.000Z",
+      "views": 278,
+      "likes": 34
+    },
+    {
+      "id": "5",
+      "title": "2024 年前端开发趋势预测",
+      "content": "随着技术的不断发展，前端开发领域也在快速变化。本文预测 2024 年前端开发的主要趋势，包括 AI 集成、WebAssembly、微前端等。",
+      "summary": "分析和预测 2024 年前端开发的技术趋势和发展方向",
+      "tags": [
+        "前端",
+        "趋势",
+        "预测",
+        "AI"
+      ],
+      "category": "技术",
+      "status": "published",
+      "createdAt": "2024-01-12T16:45:00.000Z",
+      "updatedAt": "2024-01-25T15:20:00.000Z",
+      "views": 512,
+      "likes": 67
+    },
+    {
+      "id": "6",
+      "title": "如何保持高效的学习状态",
+      "content": "学习是一个持续的过程，保持高效的学习状态对于个人成长至关重要。本文分享一些实用的学习方法和时间管理技巧。",
+      "summary": "分享保持高效学习状态的方法和时间管理技巧",
+      "tags": [
+        "学习",
+        "效率",
+        "自我提升"
+      ],
+      "category": "学习",
+      "status": "published",
+      "createdAt": "2024-01-15T08:50:00.000Z",
+      "updatedAt": "2024-01-28T10:15:00.000Z",
+      "views": 189,
+      "likes": 28
+    },
+    {
+      "id": "7",
+      "title": "健康生活的十个习惯",
+      "content": "健康的生活方式对于长期的工作和生活质量都很重要。本文介绍十个简单易行的健康习惯，帮助你改善生活质量。",
+      "summary": "介绍十个简单易行的健康生活习惯",
+      "tags": [
+        "健康",
+        "生活",
+        "习惯"
+      ],
+      "category": "生活",
+      "status": "draft",
+      "createdAt": "2024-01-18T13:25:00.000Z",
+      "updatedAt": "2024-01-30T14:40:00.000Z",
+      "views": 76,
+      "likes": 15
+    },
+    {
+      "id": "8",
+      "title": "旅行摄影技巧分享",
+      "content": "旅行时如何拍出令人满意的照片？本文分享一些实用的旅行摄影技巧，包括构图、光线利用和设备选择等。",
+      "summary": "分享旅行摄影的实用技巧和注意事项",
+      "tags": [
+        "摄影",
+        "旅行",
+        "技巧"
+      ],
+      "category": "生活",
+      "status": "published",
+      "createdAt": "2024-01-20T10:10:00.000Z",
+      "updatedAt": "2024-02-01T12:30:00.000Z",
+      "views": 234,
+      "likes": 31
+    },
+    {
+      "id": "9",
+      "title": "React 与 Vue 的对比分析",
+      "content": "React 和 Vue 都是流行的前端框架，各有优缺点。本文从学习曲线、性能、生态系统等方面进行详细对比。",
+      "summary": "详细对比 React 和 Vue 框架的特点和适用场景",
+      "tags": [
+        "React",
+        "Vue",
+        "前端",
+        "框架"
+      ],
+      "category": "技术",
+      "status": "archived",
+      "createdAt": "2023-12-15T09:30:00.000Z",
+      "updatedAt": "2024-01-10T11:45:00.000Z",
+      "views": 421,
+      "likes": 52
+    },
+    {
+      "id": "10",
+      "title": "Node.js 后端开发入门指南",
+      "content": "Node.js 使得 JavaScript 可以用于后端开发。本文介绍 Node.js 的基础知识、常用框架和开发工具。",
+      "summary": "Node.js 后端开发的基础知识和入门指南",
+      "tags": [
+        "Node.js",
+        "后端",
+        "JavaScript"
+      ],
+      "category": "技术",
+      "status": "published",
+      "createdAt": "2024-01-22T15:20:00.000Z",
+      "updatedAt": "2024-02-02T16:55:00.000Z",
+      "views": 167,
+      "likes": 19
+    },
+    {
+      "id": "11",
+      "title": "CSS Grid 布局完全指南",
+      "content": "CSS Grid 提供了强大的二维布局能力。本文详细介绍 Grid 布局的所有属性和使用方法，包含大量实用示例。",
+      "summary": "全面介绍 CSS Grid 布局的属性和使用方法",
+      "tags": [
+        "CSS",
+        "布局",
+        "前端"
+      ],
+      "category": "技术",
+      "status": "draft",
+      "createdAt": "2024-01-25T11:40:00.000Z",
+      "updatedAt": "2024-02-03T10:25:00.000Z",
+      "views": 98,
+      "likes": 14
+    },
+    {
+      "id": "12",
+      "title": "如何提高团队协作效率",
+      "content": "高效的团队协作是项目成功的关键。本文分享提高团队协作效率的工具、方法和最佳实践。",
+      "summary": "分享提高团队协作效率的工具、方法和最佳实践",
+      "tags": [
+        "团队",
+        "协作",
+        "效率"
+      ],
+      "category": "学习",
+      "status": "published",
+      "createdAt": "2024-01-28T14:15:00.000Z",
+      "updatedAt": "2024-02-05T09:50:00.000Z",
+      "views": 145,
+      "likes": 22
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "技术",
+      "color": "#409EFF",
+      "count": 7
+    },
+    {
+      "id": "2",
+      "name": "生活",
+      "color": "#67C23A",
+      "count": 2
+    },
+    {
+      "id": "3",
+      "name": "学习",
+      "color": "#E6A23C",
+      "count": 2
+    },
+    {
+      "id": "4",
+      "name": "系统",
+      "color": "#909399",
+      "count": 1
+    }
+  ],
+  "tags": [
+    {
+      "id": "1",
+      "name": "Vue",
+      "color": "#42b883"
+    },
+    {
+      "id": "2",
+      "name": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "id": "3",
+      "name": "AI",
+      "color": "#ff6b6b"
+    },
+    {
+      "id": "4",
+      "name": "前端",
+      "color": "#4ecdc4"
+    },
+    {
+      "id": "5",
+      "name": "JavaScript",
+      "color": "#f9ca24"
+    },
+    {
+      "id": "6",
+      "name": "React",
+      "color": "#61dafb"
+    },
+    {
+      "id": "7",
+      "name": "Node.js",
+      "color": "#8cc84b"
+    },
+    {
+      "id": "8",
+      "name": "CSS",
+      "color": "#2965f1"
+    },
+    {
+      "id": "9",
+      "name": "构建工具",
+      "color": "#f16529"
+    },
+    {
+      "id": "10",
+      "name": "学习",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "11",
+      "name": "效率",
+      "color": "#2ecc71"
+    },
+    {
+      "id": "12",
+      "name": "健康",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "13",
+      "name": "生活",
+      "color": "#3498db"
+    },
+    {
+      "id": "14",
+      "name": "摄影",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "15",
+      "name": "旅行",
+      "color": "#f39c12"
+    },
+    {
+      "id": "16",
+      "name": "团队",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "17",
+      "name": "协作",
+      "color": "#34495e"
+    },
+    {
+      "id": "18",
+      "name": "趋势",
+      "color": "#e67e22"
+    },
+    {
+      "id": "19",
+      "name": "工程化",
+      "color": "#95a5a6"
+    },
+    {
+      "id": "20",
+      "name": "框架",
+      "color": "#d35400"
+    },
+    {
+      "id": "21",
+      "name": "欢迎",
+      "color": "#27ae60"
+    },
+    {
+      "id": "22",
+      "name": "介绍",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "23",
+      "name": "系统",
+      "color": "#7f8c8d"
+    },
+    {
+      "id": "24",
+      "name": "预测",
+      "color": "#c0392b"
+    },
+    {
+      "id": "25",
+      "name": "自我提升",
+      "color": "#16a085"
+    },
+    {
+      "id": "26",
+      "name": "习惯",
+      "color": "#2980b9"
+    },
+    {
+      "id": "27",
+      "name": "技巧",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "28",
+      "name": "布局",
+      "color": "#3498db"
+    },
+    {
+      "id": "29",
+      "name": "后端",
+      "color": "#2c3e50"
+    }
+  ]
+}
