@@ -112,21 +112,9 @@ class ArticleService {
     async createArticle(article: Omit<Article, 'id'>): Promise<ApiResponse<Article>> {
         try {
             console.log('📝 发送创建文章请求:', article)
-            
-            // 生成随机 ID（JSON Server 会自动生成，但我们也可以自己设置）
-            const id = Date.now().toString()
 
-            // 为新建的文章添加时间戳
-            const articleWithTimestamps = {
-                ...article,
-                id: id,
-                createdAt: new Date().toISOString(),
-                updatedAt: new Date().toISOString(),
-                views: 0,
-                likes: 0
-            }
-
-            const response = await api.post('articles', articleWithTimestamps)
+            // 注意：这里不再重复设置时间戳，因为 Store 已经设置了
+            const response = await api.post('/articles', article)
             console.log('✅ 创建文章响应:', response.data)
 
             return {
@@ -149,13 +137,8 @@ class ArticleService {
         try {
             console.log(`✏️ 发送更新文章请求，ID: ${id}`, article)
 
-            // 更新时只更新 updatedAt 字段
-            const articleWithUpdateTime = {
-                ...article,
-                updatedAt: new Date().toISOString()
-            }
-
-            const response = await api.put(`/articles/${id}`, articleWithUpdateTime)
+            // 注意：这里不再重复设置更新时间，因为 Store 已经设置了
+            const response = await api.patch(`/articles/${id}`, article)
             console.log('✅ 更新文章响应:', response.data)
 
             return {

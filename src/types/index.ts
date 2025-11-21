@@ -12,7 +12,7 @@ export interface Article {
     summary?: string
     tags: string[]
     category: string
-    status: 'draft' | 'published' | 'archived'
+    status: ArticleStatus
     createdAt: string
     updatedAt: string
     views: number
@@ -65,4 +65,11 @@ export interface SearchParams {
 }
 
 // 文章表单数据（用于创建和编辑）
-export type ArticleFormData = Omit<Article, 'id' | 'createdAt' | 'updatedAt' | 'views' | 'likes'>
+export type ArticleFormData = {
+    title: string
+    content: string
+    summary?: string
+    tags: string[]
+    category: string
+    status: ArticleStatus
+}

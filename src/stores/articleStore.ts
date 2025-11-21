@@ -1,7 +1,7 @@
 // 文章状态管理 Store
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { Article, PaginationParams } from '@/types'
+import type { Article, ArticleFormData, PaginationParams } from '@/types'
 import { articleService } from '@/services/articleService'
 
 /**
@@ -142,14 +142,25 @@ export const useArticleStore = defineStore('article', () => {
      * @param articleData 文章数据
      * @returns 创建的文章 ID
      */
-    const createArticle = async (articleData: Omit<Article, 'id'>): Promise<string | null> => {
+    const createArticle = async (articleData: ArticleFormData): Promise<string | null> => {
         loading.value = true
         error.value = null
 
         try {
             console.log('🔄 开始创建文章...')
 
-            const response = await articleService.createArticle(articleData)
+            // 构建完整的文章数据，补充系统生成的字段
+            const completeArticleData: Omit<Article, 'id'> = {
+                ...articleData,  // 展开表单数据
+                createdAt: new Date().toISOString(),  // 系统生成：创建时间
+                updatedAt: new Date().toISOString(),  // 系统生成：更新时间
+                views: 0,        // 系统设置：初始浏览数
+                likes: 0         // 系统设置：初始点赞数
+            }
+
+            console.log('📝 完整文章数据:', completeArticleData)
+
+            const response = await articleService.createArticle(completeArticleData)
 
             if (response.success) {
                 // 将新文章添加到列表开头
@@ -173,14 +184,22 @@ export const useArticleStore = defineStore('article', () => {
      * @param id 文章 ID
      * @param articleData 要更新的文章数据
      */
-    const updateArticle = async (id: string, articleData: Partial<Article>) => {
+    const updateArticle = async (id: string, articleData: Partial<ArticleFormData>) => {
         loading.value = true
         error.value = null
 
         try {
             console.log(`🔄 开始更新文章 (ID: ${id})...`)
 
-            const response = await articleService.updateArticle(id, articleData)
+            // 构建更新数据，只更新时间字段
+            const updateData: Partial<Article> = {
+                ...articleData,
+                updatedAt: new Date().toISOString()  // 系统更新：更新时间
+            }
+
+            console.log('📝 更新数据:', updateData)
+
+            const response = await articleService.updateArticle(id, updateData)
 
             if (response.success) {
                 // 更新列表中的文章
