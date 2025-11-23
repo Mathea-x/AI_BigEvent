@@ -28,6 +28,12 @@ const router = createRouter({
             meta: { title: '编辑文章' }
         },
         {
+            path: '/articles/:id',
+            name: 'ArticleDetail',
+            component: () => import('@/views/ArticleDetailView.vue'),
+            meta: { title: '文章详情' }
+        },
+        {
             path: '/categories',
             name: 'Categories',
             component: () => import('@/views/CategoriesView.vue'),

@@ -14,14 +14,15 @@
       <el-form class="article-form" label-width="100px" ref="formRef" :model="formData" :rules="formRules">
         <!-- 文章标题 -->
         <el-form-item label="文章标题" prop="title">
-          <el-input placeholder="请输入文章标题" maxlength="100" show-word-limit clearable v-model="formData.title" :id="fieldIds.title" />
+          <el-input placeholder="请输入文章标题" maxlength="100" show-word-limit clearable v-model="formData.title"
+            :id="fieldIds.title" />
         </el-form-item>
 
         <!-- 文章分类 -->
         <el-form-item label="文章分类" prop="category">
           <el-select placeholder="请选择文章分类" style="width: 100%" v-model="formData.category">
-            <el-option v-for="category in categories" :key="category.id" :label="category.name"
-              :value="category.name" :id="fieldIds.category" />
+            <el-option v-for="category in categories" :key="category.id" :label="category.name" :value="category.name"
+              :id="fieldIds.category" />
           </el-select>
         </el-form-item>
 
@@ -42,36 +43,8 @@
         <!-- 文章内容 -->
         <el-form-item label="文章内容" prop="content">
           <div class="editor-container">
-            <!-- 文本区域编辑器（后续可替换为富文本编辑器） -->
-            <el-input placeholder="请输入文章内容" type="textarea" :rows="15" resize="vertical" v-model="formData.content" :id="fieldIds.content" />
-
-            <!-- 编辑器工具栏 -->
-            <div class="editor-toolbar">
-              <div class="toolbar-left">
-                <!-- 插入模板 -->
-                <el-button type="text" size="small" @click="insertTemplate">
-                  <el-icon>
-                    <DocumentAdd />
-                  </el-icon>
-                  插入模板
-                </el-button>
-
-                <!-- 格式化 -->
-                <el-button type="text" size="small" @click="formatContent">
-                  <el-icon>
-                    <Star />
-                  </el-icon>
-                  格式化
-                </el-button>
-              </div>
-
-              <!-- 字数统计 -->
-              <div class="toolbar-right">
-                <span class="word-count">
-                  字数：{{ formData.content.length }}
-                </span>
-              </div>
-            </div>
+            <!-- Tiptap 富文本编辑器 -->
+            <TiptapEditor v-model="formData.content" :height="500" @change="handleContentChange" />
           </div>
         </el-form-item>
 
@@ -153,6 +126,8 @@ import { ElMessage, type FormRules, type FormInstance, ElMessageBox } from 'elem
 import { computed, onMounted, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import TiptapEditor from '@/components/TiptapEditor.vue'
+
 
 // ========== 路由和Store初始化 ==========
 const route = useRoute()
@@ -195,8 +170,27 @@ const formRules: FormRules = {
     { min: 2, max: 100, message: '标题长度在 2 到 100 个字符', trigger: 'blur' }
   ],
   content: [
-    { required: true, message: '请输入文章内容', trigger: 'blur' },
-    { min: 2, message: '内容至少需要 10 个字符', trigger: 'blur' }
+    {
+      required: true,
+      message: '请输入文章内容',
+      trigger: 'blur',
+      validator: (rule, value, callback) => {
+        if (!value) {
+          callback(new Error('请输入文章内容'))
+          return
+        }
+
+        // 去除HTML标签计算纯文本长度
+        const text = value.replace(/<[^>]*>/g, '')
+        const cleanText = text.replace(/\s/g, '') // 去除所有空白字符
+
+        if (cleanText.length < 10) {
+          callback(new Error('内容至少需要10个有效字符'))
+        } else {
+          callback()
+        }
+      }
+    }
   ],
   category: [
     { required: true, message: '请选择文章分类', trigger: 'change' }
@@ -292,6 +286,12 @@ const loadArticleData = async () => {
     // 无论成功失败，都结束加载状态
     loading.value = false
   }
+}
+
+// 更新内容变化处理
+const handleContentChange = (content: string) => {
+  console.log('内容已更新，HTML字符数:', content.length)
+  // 这里可以添加自动保存草稿的逻辑
 }
 
 // 插入内容模板

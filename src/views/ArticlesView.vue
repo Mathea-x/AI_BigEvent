@@ -137,7 +137,7 @@
             <!-- 文章标题和状态 -->
             <div class="article-header">
               <h3 class="article-title">
-                <router-link :to="`/article/edit/${article.id}`" class="title-link">
+                <router-link :to="`/articles/${article.id}`" class="title-link">
                   {{ article.title }}
                 </router-link>
               </h3>
@@ -192,6 +192,14 @@
 
           <!-- 操作按钮 -->
           <div class="article-actions">
+            <!-- 查看 -->
+            <el-button type="primary" link @click="handleViewArticle(article.id)">
+              <el-icon>
+                <Tickets />
+              </el-icon>
+              查看
+            </el-button>
+
             <!-- 编辑 -->
             <el-button type="primary" link @click="handleEditArticle(article.id)">
               <el-icon>
@@ -431,6 +439,12 @@ const handleCreateArticle = () => {
   router.push('/articles/create')
 }
 
+// 跳转到文章详情页面
+const handleViewArticle = (id: string) => {
+  console.log(`✏️ 跳转到文章详情页面，文章ID: ${id}`)
+  router.push(`/articles/${id}`)
+}
+
 // 跳转到编辑文章页面
 const handleEditArticle = (id: string) => {
   console.log(`✏️ 跳转到编辑文章页面，文章ID: ${id}`)
@@ -591,6 +605,12 @@ const formatDate = (dateString: string): string => {
     return '无效日期'
   }
 }
+
+// // 跳转到文章详情页面
+// const goToArticle = (articleId: string) => {
+//   console.log(`✏️ 跳转到相关文章详情页面，文章ID: ${articleId}`)
+//   router.push(`/articles/${articleId}`)
+// }
 
 </script>
 

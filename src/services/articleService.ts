@@ -217,6 +217,126 @@ class ArticleService {
             throw error
         }
     }
+
+    /**
+     * 增加文章阅读量
+     * @param id 文章ID */
+    async incrementViewCount(id: string): Promise<ApiResponse<Article>> {
+        try {
+            console.log(`📊 增加文章阅读量: ${id}`)
+
+            // 首先获取当前文章
+            const currentArticleResponse = await api.get(`/articles/${id}`)
+            if (!currentArticleResponse.data) {
+                throw new Error('文章不存在')
+            }
+
+            const currentArticle = currentArticleResponse.data
+            const updatedViews = (currentArticle.views || 0) + 1
+
+            // 更新文章阅读量
+            const response = await api.patch(`/articles/${id}`, {
+                views: updatedViews
+            })
+
+            console.log(`✅ 阅读量更新成功: ${updatedViews}`)
+
+            return {
+                code: 200,
+                data: response.data,
+                message: '阅读量更新成功',
+                success: true
+            }
+        } catch (error) {
+            console.error('❌ 更新阅读量失败:', error)
+            return {
+                code: 500,
+                data: null as any,
+                message: error instanceof Error ? error.message : '更新阅读量失败',
+                success: false
+            }
+        }
+    }
+
+    /**
+     * 点赞文章
+     * @param id 文章ID */
+    async likeArticle(id: string): Promise<ApiResponse<Article>> {
+        try {
+            console.log(`❤️ 点赞文章: ${id}`)
+
+            // 首先获取当前文章
+            const currentArticleResponse = await api.get(`/articles/${id}`)
+            if (!currentArticleResponse.data) {
+                throw new Error('文章不存在')
+            }
+
+            const currentArticle = currentArticleResponse.data
+            const updatedLikes = (currentArticle.likes || 0) + 1
+
+            // 更新文章点赞数
+            const response = await api.patch(`/articles/${id}`, {
+                likes: updatedLikes
+            })
+
+            console.log(`✅ 点赞成功: ${updatedLikes}`)
+
+            return {
+                code: 200,
+                data: response.data,
+                message: '点赞成功',
+                success: true
+            }
+        } catch (error) {
+            console.error('❌ 点赞失败:', error)
+            return {
+                code: 500,
+                data: null as any,
+                message: error instanceof Error ? error.message : '点赞失败',
+                success: false
+            }
+        }
+    }
+
+    /**
+     * 取消点赞文章
+     * @param id 文章ID */
+    async unlikeArticle(id: string): Promise<ApiResponse<Article>> {
+        try {
+            console.log(`💔 取消点赞文章: ${id}`)
+
+            // 首先获取当前文章
+            const currentArticleResponse = await api.get(`/articles/${id}`)
+            if (!currentArticleResponse.data) {
+                throw new Error('文章不存在')
+            }
+
+            const currentArticle = currentArticleResponse.data
+            const updatedLikes = Math.max(0, (currentArticle.likes || 1) - 1)
+
+            // 更新文章点赞数
+            const response = await api.patch(`/articles/${id}`, {
+                likes: updatedLikes
+            })
+
+            console.log(`✅ 取消点赞成功: ${updatedLikes}`)
+
+            return {
+                code: 200,
+                data: response.data,
+                message: '取消点赞成功',
+                success: true
+            }
+        } catch (error) {
+            console.error('❌ 取消点赞失败:', error)
+            return {
+                code: 500,
+                data: null as any,
+                message: error instanceof Error ? error.message : '取消点赞失败',
+                success: false
+            }
+        }
+    }
 }
 
 // 导出单例实例

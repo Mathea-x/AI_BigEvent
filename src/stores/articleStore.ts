@@ -306,6 +306,129 @@ export const useArticleStore = defineStore('article', () => {
         currentArticle.value = null
     }
 
+    /**
+     * 增加文章阅读量
+     * @param id 文章ID */
+    const incrementViewCount = async (id: string) => {
+        loading.value = true
+        error.value = null
+
+        try {
+            console.log(`📊 Store: 增加文章阅读量 (ID: ${id})`)
+
+            const response = await articleService.incrementViewCount(id)
+
+            if (response.success) {
+                // 更新列表中的文章
+                const index = articles.value.findIndex(article => article.id === id)
+                if (index !== -1) {
+                    articles.value[index] = { ...articles.value[index], ...response.data }
+                }
+
+                // 更新当前文章
+                if (currentArticle.value && currentArticle.value.id === id) {
+                    currentArticle.value = { ...currentArticle.value, ...response.data }
+                }
+
+                console.log(`✅ Store: 阅读量更新成功`)
+            } else {
+                throw new Error(response.message || '更新阅读量失败')
+            }
+        } catch (err) {
+            error.value = err instanceof Error ? err.message : '未知错误'
+            console.error(`❌ Store: 更新阅读量失败 (ID: ${id}):`, err)
+        } finally {
+            loading.value = false
+        }
+    }
+
+    /**
+     * 强制刷新当前文章数据
+     * @param id 文章ID */
+    const refreshCurrentArticle = async (id: string) => {
+        try {
+            console.log(`🔄 Store: 强制刷新当前文章数据 (ID: ${id})`)
+            await fetchArticleById(id)
+        } catch (error) {
+            console.error('刷新文章数据失败:', error)
+        }
+    }
+
+    /**
+     * 点赞文章
+     * @param id 文章ID
+     */
+    const likeArticle = async (id: string) => {
+        loading.value = true
+        error.value = null
+
+        try {
+            console.log(`❤️ Store: 点赞文章 (ID: ${id})`)
+
+            const response = await articleService.likeArticle(id)
+
+            if (response.success) {
+                // 更新列表中的文章
+                const index = articles.value.findIndex(article => article.id === id)
+                if (index !== -1) {
+                    articles.value[index] = { ...articles.value[index], ...response.data }
+                }
+
+                // 更新当前文章
+                if (currentArticle.value && currentArticle.value.id === id) {
+                    Object.assign(currentArticle.value, response.data)
+                    console.log(`✅ Store: 点赞成功，当前点赞数: ${currentArticle.value.likes}`)
+                }
+                return response.data
+            } else {
+                throw new Error(response.message || '点赞失败')
+            }
+        } catch (err) {
+            error.value = err instanceof Error ? err.message : '未知错误'
+            console.error(`❌ Store: 点赞失败 (ID: ${id}):`, err)
+        } finally {
+            loading.value = false
+        }
+    }
+
+    /**
+     * 取消点赞文章
+     * @param id 文章ID
+     */
+    const unlikeArticle = async (id: string) => {
+        loading.value = true
+        error.value = null
+
+        try {
+            console.log(`💔 Store: 取消点赞文章 (ID: ${id})`)
+
+            const response = await articleService.unlikeArticle(id)
+
+            if (response.success) {
+                // 更新列表中的文章
+                const index = articles.value.findIndex(article => article.id === id)
+                if (index !== -1) {
+                    articles.value[index] = { ...articles.value[index], ...response.data }
+                }
+
+                // 更新当前文章
+                if (currentArticle.value && currentArticle.value.id === id) {
+                    Object.assign(currentArticle.value, response.data)
+                    console.log(`✅ Store: 取消点赞成功，当前点赞数: ${currentArticle.value.likes}`)
+                }
+                console.log(`✅ Store: 取消点赞成功`)
+                return response.data
+            } else {
+                throw new Error(response.message || '取消点赞失败')
+            }
+        } catch (err) {
+            error.value = err instanceof Error ? err.message : '未知错误'
+            console.error(`❌ Store: 取消点赞失败 (ID: ${id}):`, err)
+        } finally {
+            loading.value = false
+        }
+    }
+
     // 导出所有状态和方法
     return {
         // State
@@ -328,6 +451,10 @@ export const useArticleStore = defineStore('article', () => {
         deleteArticle,
         searchArticles,
         clearError,
-        clearCurrentArticle
+        clearCurrentArticle,
+        incrementViewCount,
+        refreshCurrentArticle,
+        likeArticle,
+        unlikeArticle
     }
 })

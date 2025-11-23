@@ -13,8 +13,8 @@
       "status": "published",
       "createdAt": "2024-01-01T10:00:00.000Z",
       "updatedAt": "2024-01-01T10:00:00.000Z",
-      "views": 100,
-      "likes": 10
+      "views": 133,
+      "likes": 11
     },
     {
       "id": "2",
@@ -31,7 +31,7 @@
       "status": "published",
       "createdAt": "2024-01-05T09:15:00.000Z",
       "updatedAt": "2024-01-18T16:45:00.000Z",
-      "views": 342,
+      "views": 351,
       "likes": 45
     },
     {
@@ -48,7 +48,7 @@
       "status": "draft",
       "createdAt": "2024-01-08T14:20:00.000Z",
       "updatedAt": "2024-01-20T11:10:00.000Z",
-      "views": 89,
+      "views": 121,
       "likes": 12
     },
     {
@@ -220,6 +220,22 @@
       "status": "draft",
       "createdAt": "2025-11-20T09:38:03.922Z",
       "updatedAt": "2025-11-20T09:38:03.922Z",
+      "views": 0,
+      "likes": 0
+    },
+    {
+      "id": "23a6",
+      "title": "Test1",
+      "content": "<blockquote><ul><li><p><strong>富文本编辑器Test1</strong>好好好好好</p></li></ul></blockquote><p></p>",
+      "summary": "富文本编辑器Test1",
+      "tags": [
+        "学习",
+        "富文本编辑器"
+      ],
+      "category": "学习",
+      "status": "draft",
+      "createdAt": "2025-11-21T08:33:01.252Z",
+      "updatedAt": "2025-11-21T08:33:37.955Z",
       "views": 0,
       "likes": 0
     }
