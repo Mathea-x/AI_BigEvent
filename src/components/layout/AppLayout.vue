@@ -51,12 +51,14 @@
 import {
   House,
   Document,
-  CollectionTag
+  CollectionTag,
+  Sort
 } from '@element-plus/icons-vue'
 
 const menuItems = [
   { path: '/', name: '首页', icon: House },
   { path: '/articles', name: '文章管理', icon: Document },
-  { path: '/categories', name: '分类管理', icon: CollectionTag }
+  { path: '/categories', name: '分类管理', icon: Sort },
+  { path: '/tags', name: '标签管理', icon: CollectionTag }
 ]
 </script>

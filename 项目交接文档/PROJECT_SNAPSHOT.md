@@ -1,13 +1,14 @@
 # 🚀 大事件管理系统 - 项目快照
 
 ## 📅 快照时间
-$(当前日期和时间)
+$(2025年11月24日)
 
 ## 🎯 当前进度
 - ✅ 项目基础架构搭建
 - ✅ 文章管理完整功能
 - ✅ 搜索、筛选、分页功能
 - ✅ 状态管理和错误处理
+- ✅ 文章详情和阅读体验
 
 ## 🛠️ 技术栈
 - Vue 3 + Composition API + TypeScript
@@ -20,11 +21,19 @@ $(当前日期和时间)
 ```
 src/
 ├── views/
-│ └── ArticlesView.vue # 文章列表页面（已完成）
+│ ├── ArticleDetailView.vue # 文章详情页面（已完成）
+│ ├── ArticleEditView.vue # 文章编辑页面（已完成）
+│ ├── ArticlesView.vue # 文章列表页面（已完成）
+│ ├── CategoriesView.vue # 分类列表页面（待开发）
+│ └── HomeView.vue # 首页
 ├── stores/
-│ └── articleStore.ts # 文章状态管理（已完成）
+│ ├── articleStore.ts # 文章状态管理（已完成）
+│ ├── categoryStore.ts # 分类状态管理（已完成）
+│ └── tagStore.ts # 标签状态管理（已完成）
 ├── services/
-│ └── articleService.ts # API 服务层（已完成）
+│ ├── articleService.ts # API 服务层（已完成）
+│ ├── categoryService.ts # API 服务层（已完成）
+│ └── tagService.ts # API 服务层（已完成）
 ├── types/
 │ └── index.ts # 类型定义（已完成）
 └── router/
@@ -32,17 +41,15 @@ src/
 ```
 
 ## 🔧 最近修复的问题
-1. ✅ 搜索功能 - 修复 undefined 错误
-2. ✅ 筛选功能 - 修复状态丢失问题
-3. ✅ 分页功能 - 保持筛选状态
-4. ✅ 类型错误 - 修复 Vue 模板中的 TypeScript 语法
+1. ✅ 点赞功能 - 点赞后页面数据不更新问题
+2. ✅ Git功能 - Git 版本更新和 GitHub 上传
 
 ## 🎯 下一步开发计划
-1. 文章编辑/创建页面
-2. 富文本编辑器集成
-3. AI 功能集成
-4. PWA 离线功能
-5. 实时协作功能
+1. 分类和标签管理
+2. AI 写作助手
+3. 智能内容管理
+4. 性能优化
+5. PWA 和离线功能
 
 ## 📝 重要配置说明
 - 开发服务器: `npm run dev`

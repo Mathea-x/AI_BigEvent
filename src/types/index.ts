@@ -23,13 +23,18 @@ export interface Category {
     id: string
     name: string
     color: string
-    count: number
+    description?: string
+    articleCount: number
+    createdAt: string
+    updatedAt: string
 }
 // 标签接口
 export interface Tag {
     id: string
     name: string
     color: string
+    articleCount: number
+    createdAt: string
 }
 
 // API响应格式，@template T 数据类型
@@ -39,6 +44,7 @@ export interface ApiResponse<T = any> {
     message: string
     success: boolean
 }
+
 // 分页参数
 export interface PaginationParams {
     page: number
@@ -46,7 +52,6 @@ export interface PaginationParams {
     sortBy?: string
     sortOrder?: 'asc' | 'desc'
 }
-
 
 // 列表响应数据，@template T 列表项类型
 export interface ListResponse<T> {
@@ -72,4 +77,17 @@ export type ArticleFormData = {
     tags: string[]
     category: string
     status: ArticleStatus
+}
+
+// 分类表单数据
+export type CategoryFormData = {
+    name: string
+    color: string
+    description?: string
+}
+
+// 标签表单数据
+export type TagFormData = {
+    name: string
+    color: string
 }

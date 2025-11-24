@@ -38,6 +38,12 @@ const router = createRouter({
             name: 'Categories',
             component: () => import('@/views/CategoriesView.vue'),
             meta: { title: '分类管理' }
+        },
+        {
+            path: '/tags',
+            name: 'Tags',
+            component: () => import('@/views/TagsView.vue'),
+            meta: { title: '标签管理' }
         }
     ]
 })

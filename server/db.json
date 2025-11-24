@@ -1,416 +1,358 @@
 {
-  "articles": [
-    {
-      "id": "1",
-      "title": "欢迎使用大事件管理系统",
-      "content": "这是一个智能化的文章管理系统，支持 AI 辅助创作、实时协作等高级功能。",
-      "summary": "系统介绍和欢迎信息",
-      "tags": [
-        "欢迎",
-        "介绍"
-      ],
-      "category": "系统",
-      "status": "published",
-      "createdAt": "2024-01-01T10:00:00.000Z",
-      "updatedAt": "2024-01-01T10:00:00.000Z",
-      "views": 133,
-      "likes": 11
-    },
-    {
-      "id": "2",
-      "title": "Vue 3 Composition API 深度解析",
-      "content": "Vue 3 的 Composition API 提供了更好的逻辑复用和类型推断。本文将深入探讨 ref、reactive、computed 等核心概念的使用方法和最佳实践。",
-      "summary": "深入理解 Vue 3 Composition API 的核心概念和使用技巧",
-      "tags": [
-        "Vue",
-        "前端",
-        "JavaScript",
-        "TypeScript"
-      ],
-      "category": "技术",
-      "status": "published",
-      "createdAt": "2024-01-05T09:15:00.000Z",
-      "updatedAt": "2024-01-18T16:45:00.000Z",
-      "views": 351,
-      "likes": 45
-    },
-    {
-      "id": "3",
-      "title": "TypeScript 在大型项目中的应用",
-      "content": "TypeScript 提供了静态类型检查，大大提高了代码的可维护性。本文分享在大型前端项目中应用 TypeScript 的经验和技巧。",
-      "summary": "分享 TypeScript 在大型项目中的实践经验和最佳实践",
-      "tags": [
-        "TypeScript",
-        "前端",
-        "工程化"
-      ],
-      "category": "技术",
-      "status": "draft",
-      "createdAt": "2024-01-08T14:20:00.000Z",
-      "updatedAt": "2024-01-20T11:10:00.000Z",
-      "views": 121,
-      "likes": 12
-    },
-    {
-      "id": "4",
-      "title": "现代前端构建工具比较：Vite vs Webpack",
-      "content": "Vite 和 Webpack 都是流行的前端构建工具。本文从构建速度、开发体验、生态系统等方面进行详细比较，帮助你做出合适的选择。",
-      "summary": "对比分析 Vite 和 Webpack 的优缺点及适用场景",
-      "tags": [
-        "Vite",
-        "Webpack",
-        "构建工具",
-        "前端"
-      ],
-      "category": "技术",
-      "status": "published",
-      "createdAt": "2024-01-10T11:30:00.000Z",
-      "updatedAt": "2024-01-22T09:25:00.000Z",
-      "views": 278,
-      "likes": 34
-    },
-    {
-      "id": "5",
-      "title": "2024 年前端开发趋势预测",
-      "content": "随着技术的不断发展，前端开发领域也在快速变化。本文预测 2024 年前端开发的主要趋势，包括 AI 集成、WebAssembly、微前端等。",
-      "summary": "分析和预测 2024 年前端开发的技术趋势和发展方向",
-      "tags": [
-        "前端",
-        "趋势",
-        "预测",
-        "AI"
-      ],
-      "category": "技术",
-      "status": "published",
-      "createdAt": "2024-01-12T16:45:00.000Z",
-      "updatedAt": "2024-01-25T15:20:00.000Z",
-      "views": 512,
-      "likes": 67
-    },
-    {
-      "id": "6",
-      "title": "如何保持高效的学习状态",
-      "content": "学习是一个持续的过程，保持高效的学习状态对于个人成长至关重要。本文分享一些实用的学习方法和时间管理技巧。",
-      "summary": "分享保持高效学习状态的方法和时间管理技巧",
-      "tags": [
-        "学习",
-        "效率",
-        "自我提升"
-      ],
-      "category": "学习",
-      "status": "published",
-      "createdAt": "2024-01-15T08:50:00.000Z",
-      "updatedAt": "2024-01-28T10:15:00.000Z",
-      "views": 189,
-      "likes": 28
-    },
-    {
-      "id": "7",
-      "title": "健康生活的十个习惯",
-      "content": "健康的生活方式对于长期的工作和生活质量都很重要。本文介绍十个简单易行的健康习惯，帮助你改善生活质量。",
-      "summary": "介绍十个简单易行的健康生活习惯",
-      "tags": [
-        "健康",
-        "生活",
-        "习惯"
-      ],
-      "category": "生活",
-      "status": "draft",
-      "createdAt": "2024-01-18T13:25:00.000Z",
-      "updatedAt": "2024-01-30T14:40:00.000Z",
-      "views": 76,
-      "likes": 15
-    },
-    {
-      "id": "8",
-      "title": "旅行摄影技巧分享",
-      "content": "旅行时如何拍出令人满意的照片？本文分享一些实用的旅行摄影技巧，包括构图、光线利用和设备选择等。",
-      "summary": "分享旅行摄影的实用技巧和注意事项",
-      "tags": [
-        "摄影",
-        "旅行",
-        "技巧"
-      ],
-      "category": "生活",
-      "status": "published",
-      "createdAt": "2024-01-20T10:10:00.000Z",
-      "updatedAt": "2024-02-01T12:30:00.000Z",
-      "views": 234,
-      "likes": 31
-    },
-    {
-      "id": "9",
-      "title": "React 与 Vue 的对比分析",
-      "content": "React 和 Vue 都是流行的前端框架，各有优缺点。本文从学习曲线、性能、生态系统等方面进行详细对比。",
-      "summary": "详细对比 React 和 Vue 框架的特点和适用场景",
-      "tags": [
-        "React",
-        "Vue",
-        "前端",
-        "框架"
-      ],
-      "category": "技术",
-      "status": "archived",
-      "createdAt": "2023-12-15T09:30:00.000Z",
-      "updatedAt": "2024-01-10T11:45:00.000Z",
-      "views": 421,
-      "likes": 52
-    },
-    {
-      "id": "10",
-      "title": "Node.js 后端开发入门指南",
-      "content": "Node.js 使得 JavaScript 可以用于后端开发。本文介绍 Node.js 的基础知识、常用框架和开发工具。",
-      "summary": "Node.js 后端开发的基础知识和入门指南",
-      "tags": [
-        "Node.js",
-        "后端",
-        "JavaScript"
-      ],
-      "category": "技术",
-      "status": "published",
-      "createdAt": "2024-01-22T15:20:00.000Z",
-      "updatedAt": "2024-02-02T16:55:00.000Z",
-      "views": 167,
-      "likes": 19
-    },
-    {
-      "id": "11",
-      "title": "CSS Grid 布局完全指南",
-      "content": "CSS Grid 提供了强大的二维布局能力。本文详细介绍 Grid 布局的所有属性和使用方法，包含大量实用示例。",
-      "summary": "全面介绍 CSS Grid 布局的属性和使用方法",
-      "tags": [
-        "CSS",
-        "布局",
-        "前端"
-      ],
-      "category": "技术",
-      "status": "draft",
-      "createdAt": "2024-01-25T11:40:00.000Z",
-      "updatedAt": "2024-02-03T10:25:00.000Z",
-      "views": 98,
-      "likes": 14
-    },
-    {
-      "id": "12",
-      "title": "如何提高团队协作效率",
-      "content": "高效的团队协作是项目成功的关键。本文分享提高团队协作效率的工具、方法和最佳实践。",
-      "summary": "分享提高团队协作效率的工具、方法和最佳实践",
-      "tags": [
-        "团队",
-        "协作",
-        "效率"
-      ],
-      "category": "学习",
-      "status": "published",
-      "createdAt": "2024-01-28T14:15:00.000Z",
-      "updatedAt": "2024-02-05T09:50:00.000Z",
-      "views": 145,
-      "likes": 22
-    },
-    {
-      "id": "bf91",
-      "title": "测试01",
-      "content": "# 测试测试测试\n\n## 章节一\n\n这里是文章内容...\n\n## 章节二\n\n更多内容...\n\n### 小结\n\n- 要点一\n- 要点二\n- 要点三\n\n---\n*最后更新于 2025/11/20*",
-      "summary": "",
-      "tags": [
-        "技术",
-        "前端"
-      ],
-      "category": "技术",
-      "status": "draft",
-      "createdAt": "2025-11-20T09:38:03.922Z",
-      "updatedAt": "2025-11-20T09:38:03.922Z",
-      "views": 0,
-      "likes": 0
-    },
-    {
-      "id": "23a6",
-      "title": "Test1",
-      "content": "<blockquote><ul><li><p><strong>富文本编辑器Test1</strong>好好好好好</p></li></ul></blockquote><p></p>",
-      "summary": "富文本编辑器Test1",
-      "tags": [
-        "学习",
-        "富文本编辑器"
-      ],
-      "category": "学习",
-      "status": "draft",
-      "createdAt": "2025-11-21T08:33:01.252Z",
-      "updatedAt": "2025-11-21T08:33:37.955Z",
-      "views": 0,
-      "likes": 0
-    }
-  ],
   "categories": [
     {
       "id": "1",
-      "name": "技术",
+      "name": "技术教程",
       "color": "#409EFF",
-      "count": 7
+      "description": "编程语言、框架、工具等技术教程类文章，涵盖前后端开发全栈技术",
+      "articleCount": 2,
+      "createdAt": "2024-01-01T08:00:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
     },
     {
       "id": "2",
-      "name": "生活",
+      "name": "生活随笔",
       "color": "#67C23A",
-      "count": 2
+      "description": "日常生活、感悟、旅行、读书笔记等生活类文章分享",
+      "articleCount": 1,
+      "createdAt": "2024-01-02T09:15:00.000Z",
+      "updatedAt": "2024-01-14T16:45:00.000Z"
     },
     {
       "id": "3",
-      "name": "学习",
+      "name": "学习笔记",
       "color": "#E6A23C",
-      "count": 2
+      "description": "学习心得、知识总结、技能提升等学习成长类内容",
+      "articleCount": 1,
+      "createdAt": "2024-01-03T14:20:00.000Z",
+      "updatedAt": "2024-01-16T11:20:00.000Z"
     },
     {
       "id": "4",
-      "name": "系统",
+      "name": "系统设计",
+      "color": "#F56C6C",
+      "description": "系统架构、设计模式、分布式系统、微服务等技术深度文章",
+      "articleCount": 1,
+      "createdAt": "2024-01-04T11:30:00.000Z",
+      "updatedAt": "2024-01-12T15:10:00.000Z"
+    },
+    {
+      "id": "5",
+      "name": "前端开发",
       "color": "#909399",
-      "count": 1
+      "description": "Vue、React、JavaScript、TypeScript等前端技术深度解析",
+      "articleCount": 3,
+      "createdAt": "2024-01-05T13:45:00.000Z",
+      "updatedAt": "2024-01-17T09:25:00.000Z"
+    },
+    {
+      "id": "6",
+      "name": "后端开发",
+      "color": "#FF85C0",
+      "description": "Node.js、Java、Python、Go等后端技术实战经验分享",
+      "articleCount": 1,
+      "createdAt": "2024-01-06T10:00:00.000Z",
+      "updatedAt": "2024-01-16T14:35:00.000Z"
+    },
+    {
+      "id": "7",
+      "name": "数据库",
+      "color": "#5D81F9",
+      "description": "MySQL、Redis、MongoDB等数据库技术原理与实践",
+      "articleCount": 1,
+      "createdAt": "2024-01-07T16:20:00.000Z",
+      "updatedAt": "2024-01-15T13:50:00.000Z"
+    },
+    {
+      "id": "8",
+      "name": "DevOps",
+      "color": "#36CFC9",
+      "description": "Docker、Kubernetes、CI/CD、自动化运维等技术实践",
+      "articleCount": 1,
+      "createdAt": "2024-01-08T12:10:00.000Z",
+      "updatedAt": "2024-01-14T17:30:00.000Z"
+    },
+    {
+      "id": "9",
+      "name": "人工智能",
+      "color": "#9254DE",
+      "description": "机器学习、深度学习、自然语言处理等AI技术前沿",
+      "articleCount": 1,
+      "createdAt": "2024-01-09T15:40:00.000Z",
+      "updatedAt": "2024-01-17T10:15:00.000Z"
+    },
+    {
+      "id": "10",
+      "name": "产品设计",
+      "color": "#FF9C6E",
+      "description": "产品思维、用户体验、交互设计、产品方法论",
+      "articleCount": 0,
+      "createdAt": "2024-01-10T09:55:00.000Z",
+      "updatedAt": "2024-01-13T14:20:00.000Z"
     }
   ],
   "tags": [
     {
       "id": "1",
-      "name": "Vue",
-      "color": "#42b883"
+      "name": "Vue.js",
+      "color": "#42b883",
+      "articleCount": 2,
+      "createdAt": "2024-01-01T10:00:00.000Z"
     },
     {
       "id": "2",
-      "name": "TypeScript",
-      "color": "#3178c6"
+      "name": "React",
+      "color": "#61dafb",
+      "articleCount": 1,
+      "createdAt": "2024-01-02T11:00:00.000Z"
     },
     {
       "id": "3",
-      "name": "AI",
-      "color": "#ff6b6b"
+      "name": "Node.js",
+      "color": "#68a063",
+      "articleCount": 1,
+      "createdAt": "2024-01-03T12:00:00.000Z"
     },
     {
       "id": "4",
-      "name": "前端",
-      "color": "#4ecdc4"
+      "name": "TypeScript",
+      "color": "#3178c6",
+      "articleCount": 1,
+      "createdAt": "2024-01-04T13:00:00.000Z"
     },
     {
       "id": "5",
-      "name": "JavaScript",
-      "color": "#f9ca24"
+      "name": "数据库",
+      "color": "#336791",
+      "articleCount": 1,
+      "createdAt": "2024-01-05T14:00:00.000Z"
     },
     {
       "id": "6",
-      "name": "React",
-      "color": "#61dafb"
+      "name": "算法",
+      "color": "#f34d4d",
+      "articleCount": 1,
+      "createdAt": "2024-01-06T15:00:00.000Z"
     },
     {
       "id": "7",
-      "name": "Node.js",
-      "color": "#8cc84b"
+      "name": "Docker",
+      "color": "#2496ed",
+      "articleCount": 1,
+      "createdAt": "2024-01-07T16:00:00.000Z"
     },
     {
       "id": "8",
-      "name": "CSS",
-      "color": "#2965f1"
+      "name": "微服务",
+      "color": "#ff6b6b",
+      "articleCount": 1,
+      "createdAt": "2024-01-08T17:00:00.000Z"
     },
     {
       "id": "9",
-      "name": "构建工具",
-      "color": "#f16529"
+      "name": "前端开发",
+      "color": "#909399",
+      "articleCount": 3,
+      "createdAt": "2024-01-09T18:00:00.000Z"
     },
     {
       "id": "10",
-      "name": "学习",
-      "color": "#9b59b6"
+      "name": "系统设计",
+      "color": "#F56C6C",
+      "articleCount": 1,
+      "createdAt": "2024-01-10T19:00:00.000Z"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Vue 3 Composition API 完全指南",
+      "content": "Vue 3 的 Composition API 提供了更灵活的代码组织方式...",
+      "summary": "深入理解 Vue 3 Composition API 的核心概念和最佳实践",
+      "tags": [
+        "Vue.js",
+        "前端开发"
+      ],
+      "category": "前端开发",
+      "status": "published",
+      "createdAt": "2024-01-10T09:00:00.000Z",
+      "updatedAt": "2024-01-15T14:30:00.000Z",
+      "views": 158,
+      "likes": 23
+    },
+    {
+      "id": "2",
+      "title": "TypeScript 类型系统深入解析",
+      "content": "TypeScript 的类型系统是其主要特性之一...",
+      "summary": "掌握 TypeScript 高级类型和类型编程技巧",
+      "tags": [
+        "TypeScript",
+        "前端开发"
+      ],
+      "category": "前端开发",
+      "status": "published",
+      "createdAt": "2024-01-11T10:30:00.000Z",
+      "updatedAt": "2024-01-16T11:20:00.000Z",
+      "views": 89,
+      "likes": 15
+    },
+    {
+      "id": "3",
+      "title": "Node.js 性能优化实践",
+      "content": "Node.js 应用的性能优化涉及多个方面...",
+      "summary": "Node.js 应用性能监控与优化实战经验分享",
+      "tags": [
+        "Node.js",
+        "后端开发"
+      ],
+      "category": "后端开发",
+      "status": "published",
+      "createdAt": "2024-01-12T14:15:00.000Z",
+      "updatedAt": "2024-01-17T16:45:00.000Z",
+      "views": 67,
+      "likes": 12
+    },
+    {
+      "id": "4",
+      "title": "微服务架构设计模式",
+      "content": "微服务架构已经成为现代应用开发的主流选择...",
+      "summary": "微服务架构的核心设计模式和实践原则",
+      "tags": [
+        "微服务",
+        "系统设计"
+      ],
+      "category": "系统设计",
+      "status": "draft",
+      "createdAt": "2024-01-13T11:20:00.000Z",
+      "updatedAt": "2024-01-16T09:30:00.000Z",
+      "views": 34,
+      "likes": 8
+    },
+    {
+      "id": "5",
+      "title": "Docker 容器化最佳实践",
+      "content": "Docker 让应用部署变得更加简单和一致...",
+      "summary": "Docker 镜像构建和容器编排的最佳实践",
+      "tags": [
+        "Docker",
+        "DevOps"
+      ],
+      "category": "DevOps",
+      "status": "published",
+      "createdAt": "2024-01-14T13:45:00.000Z",
+      "updatedAt": "2024-01-17T10:15:00.000Z",
+      "views": 78,
+      "likes": 18
+    },
+    {
+      "id": "6",
+      "title": "机器学习入门指南",
+      "content": "机器学习是人工智能的核心技术之一...",
+      "summary": "从零开始学习机器学习的基本概念和算法",
+      "tags": [
+        "算法",
+        "人工智能"
+      ],
+      "category": "人工智能",
+      "status": "published",
+      "createdAt": "2024-01-15T15:30:00.000Z",
+      "updatedAt": "2024-01-17T14:20:00.000Z",
+      "views": 112,
+      "likes": 25
+    },
+    {
+      "id": "7",
+      "title": "React Hooks 深度解析",
+      "content": "React Hooks 彻底改变了 React 组件的编写方式...",
+      "summary": "深入理解 React Hooks 的工作原理和最佳实践",
+      "tags": [
+        "React",
+        "前端开发"
+      ],
+      "category": "前端开发",
+      "status": "published",
+      "createdAt": "2024-01-16T08:45:00.000Z",
+      "updatedAt": "2024-01-17T13:10:00.000Z",
+      "views": 94,
+      "likes": 16
+    },
+    {
+      "id": "8",
+      "title": "数据库索引优化原理",
+      "content": "数据库索引是提升查询性能的关键技术...",
+      "summary": "深入理解数据库索引的工作原理和优化策略",
+      "tags": [
+        "数据库",
+        "数据库"
+      ],
+      "category": "数据库",
+      "status": "published",
+      "createdAt": "2024-01-17T10:20:00.000Z",
+      "updatedAt": "2024-01-17T15:40:00.000Z",
+      "views": 56,
+      "likes": 11
+    },
+    {
+      "id": "9",
+      "title": "JavaScript 异步编程进阶",
+      "content": "异步编程是 JavaScript 的核心特性之一...",
+      "summary": "深入理解 Promise、async/await 等异步编程技术",
+      "tags": [
+        "前端开发",
+        "技术教程"
+      ],
+      "category": "技术教程",
+      "status": "published",
+      "createdAt": "2024-01-18T11:30:00.000Z",
+      "updatedAt": "2024-01-18T16:20:00.000Z",
+      "views": 45,
+      "likes": 9
+    },
+    {
+      "id": "10",
+      "title": "Git 版本控制高级技巧",
+      "content": "Git 是现代软件开发中必不可少的版本控制工具...",
+      "summary": "掌握 Git 高级命令和工作流优化技巧",
+      "tags": [
+        "技术教程",
+        "学习笔记"
+      ],
+      "category": "技术教程",
+      "status": "published",
+      "createdAt": "2024-01-19T14:15:00.000Z",
+      "updatedAt": "2024-01-19T17:30:00.000Z",
+      "views": 78,
+      "likes": 14
     },
     {
       "id": "11",
-      "name": "效率",
-      "color": "#2ecc71"
+      "title": "程序员的生活感悟",
+      "content": "作为一名程序员，工作和生活的平衡很重要...",
+      "summary": "分享程序员的生活感悟和工作心得",
+      "tags": [
+        "生活随笔"
+      ],
+      "category": "生活随笔",
+      "status": "published",
+      "createdAt": "2024-01-20T09:45:00.000Z",
+      "updatedAt": "2024-01-20T12:10:00.000Z",
+      "views": 33,
+      "likes": 7
     },
     {
       "id": "12",
-      "name": "健康",
-      "color": "#e74c3c"
-    },
-    {
-      "id": "13",
-      "name": "生活",
-      "color": "#3498db"
-    },
-    {
-      "id": "14",
-      "name": "摄影",
-      "color": "#1abc9c"
-    },
-    {
-      "id": "15",
-      "name": "旅行",
-      "color": "#f39c12"
-    },
-    {
-      "id": "16",
-      "name": "团队",
-      "color": "#9b59b6"
-    },
-    {
-      "id": "17",
-      "name": "协作",
-      "color": "#34495e"
-    },
-    {
-      "id": "18",
-      "name": "趋势",
-      "color": "#e67e22"
-    },
-    {
-      "id": "19",
-      "name": "工程化",
-      "color": "#95a5a6"
-    },
-    {
-      "id": "20",
-      "name": "框架",
-      "color": "#d35400"
-    },
-    {
-      "id": "21",
-      "name": "欢迎",
-      "color": "#27ae60"
-    },
-    {
-      "id": "22",
-      "name": "介绍",
-      "color": "#8e44ad"
-    },
-    {
-      "id": "23",
-      "name": "系统",
-      "color": "#7f8c8d"
-    },
-    {
-      "id": "24",
-      "name": "预测",
-      "color": "#c0392b"
-    },
-    {
-      "id": "25",
-      "name": "自我提升",
-      "color": "#16a085"
-    },
-    {
-      "id": "26",
-      "name": "习惯",
-      "color": "#2980b9"
-    },
-    {
-      "id": "27",
-      "name": "技巧",
-      "color": "#e74c3c"
-    },
-    {
-      "id": "28",
-      "name": "布局",
-      "color": "#3498db"
-    },
-    {
-      "id": "29",
-      "name": "后端",
-      "color": "#2c3e50"
+      "title": "高效学习的方法论",
+      "content": "学习是一项需要方法和技巧的活动...",
+      "summary": "分享高效学习的方法和技巧",
+      "tags": [
+        "学习笔记"
+      ],
+      "category": "学习笔记",
+      "status": "published",
+      "createdAt": "2024-01-21T13:20:00.000Z",
+      "updatedAt": "2024-01-21T15:40:00.000Z",
+      "views": 67,
+      "likes": 12
     }
   ]
 }
