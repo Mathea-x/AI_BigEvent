@@ -91,3 +91,31 @@ export type TagFormData = {
     name: string
     color: string
 }
+
+// 首页统计数据接口
+export interface DashboardStats {
+    totalArticles: number
+    totalCategories: number
+    totalTags: number
+    publishedArticles: number
+    draftArticles: number
+    totalViews: number
+    totalLikes: number
+}
+
+// 最近文章接口
+export interface RecentArticle {
+    id: string
+    title: string
+    category: string
+    status: ArticleStatus
+    updatedAt: string
+    views: number
+    likes: number
+}
+
+// 写作趋势数据
+export interface WritingTrend {
+    date: string
+    count: number
+}

@@ -1,41 +1,248 @@
-# 关键代码模式
+# 🏗️ 大事件管理系统 - 代码快照
 
-## API 服务模式
+## 📅 快照时间
+$(2025年11月24日)
+
+## 🎯 项目概述
+现代化的文章管理系统，集成分类和标签管理功能，提供完整的文章创作、管理和分析体验。
+
+## 📁 核心文件结构
+```
+src/
+├── views/
+│ ├── HomeView.vue # 首页（基础版）
+│ ├── ArticlesView.vue # 文章列表页面（✅ 已完成）
+│ ├── ArticleDetailView.vue # 文章详情页面（✅ 已完成）
+│ ├── ArticleEditView.vue # 文章编辑页面（✅ 已完成）
+│ ├── CategoriesView.vue # 分类管理页面（✅ 已完成）
+│ └── TagsView.vue # 标签管理页面（✅ 已完成）
+├── stores/
+│ ├── articleStore.ts # 文章状态管理（✅ 已完成）
+│ ├── categoryStore.ts # 分类状态管理（✅ 已完成）
+│ └── tagStore.ts # 标签状态管理（✅ 已完成）
+├── services/
+│ ├── articleService.ts # 文章API服务（✅ 已完成）
+│ ├── categoryService.ts # 分类API服务（✅ 已完成）
+│ └── tagService.ts # 标签API服务（✅ 已完成）
+├── types/
+│ └── index.ts # TypeScript类型定义（✅ 已完成）
+├── router/
+│ └── index.ts # 路由配置（✅ 已完成）
+└── components/ # 公共组件目录
+```
+
+
+## 🔧 技术架构详情
+
+### 前端技术栈
+- **框架**: Vue 3 + Composition API + TypeScript
+- **构建工具**: Vite
+- **状态管理**: Pinia
+- **路由**: Vue Router 4
+- **UI组件库**: Element Plus
+- **样式方案**: Tailwind CSS + SCSS
+- **HTTP客户端**: Axios
+- **图标库**: Element Plus Icons
+
+### 开发工具链
+- **版本控制**: Git
+- **代码规范**: ESLint + Prettier
+- **API模拟**: JSON Server
+- **包管理器**: npm
+- **浏览器工具**: Vue Devtools
+
+## 🎯 核心功能实现
+
+### 文章管理模块 (✅ 已完成)
+- [x] 文章列表展示（搜索、筛选、分页）
+- [x] 文章创建和编辑（富文本编辑器）
+- [x] 文章详情查看
+- [x] 文章状态管理（草稿、已发布、已归档）
+- [x] 文章删除功能
+- [x] 阅读量和点赞功能
+
+### 分类管理模块 (✅ 已完成)
+- [x] 分类列表展示（列表样式）
+- [x] 分类创建和编辑（颜色选择）
+- [x] 分类搜索和分页
+- [x] 分类删除保护（有关联文章时禁止删除）
+- [x] 分类数据一致性验证
+
+### 标签管理模块 (✅ 已完成)
+- [x] 标签列表展示（与分类相同样式）
+- [x] 标签创建和编辑（颜色选择）
+- [x] 标签搜索和分页
+- [x] 标签删除保护（有关联文章时禁止删除）
+- [x] 标签数据一致性验证
+
+## 📊 数据模型
+
+### 文章数据结构
 ```typescript
-// 安全的搜索实现
-const safeSearch = (articles: Article[], keyword: string) => {
-  return articles.filter(article => {
-    const title = article.title?.toLowerCase() || ''
-    const content = article.content?.toLowerCase() || ''
-    return title.includes(keyword) || content.includes(keyword)
-  })
+interface Article {
+  id: string
+  title: string
+  content: string
+  summary?: string
+  tags: string[]
+  category: string
+  status: 'draft' | 'published' | 'archived'
+  createdAt: string
+  updatedAt: string
+  views: number
+  likes: number
 }
 ```
 
-## 状态管理模式
+### 分类数据结构
 ```typescript
-// Pinia Store 结构
-export const useArticleStore = defineStore('article', () => {
-  const articles = ref<Article[]>([])
+interface Category {
+  id: string
+  name: string
+  color: string
+  description?: string
+  articleCount: number
+  createdAt: string
+  updatedAt: string
+}
+```
+
+### 标签数据结构
+```typescript
+interface Tag {
+  id: string
+  name: string
+  color: string
+  articleCount: number
+  createdAt: string
+}
+```
+
+## 🛠️ API服务架构
+
+### 统一的响应格式
+```typescript
+interface ApiResponse<T = any> {
+  code: number
+  data: T
+  message: string
+  success: boolean
+}
+```
+
+### 服务层模式
+
+- 统一的错误处理
+- 类型安全的请求/响应
+- 清晰的业务逻辑分离
+
+## 🎨 UI/UX设计特点
+
+### 一致性设计
+
+- 统一的卡片式布局
+- 相同的操作按钮样式
+- 一致的状态反馈（加载、错误、空状态）
+- 响应式设计支持
+
+### 用户体验优化
+
+- 实时搜索和筛选
+- 分页状态保持
+- 操作确认对话框
+- 表单验证和错误提示
+
+## 🔄 状态管理架构
+
+### Store模式特点
+```typescript
+// 统一的Store结构
+const useXxxStore = defineStore('xxx', () => {
+  // State
+  const data = ref<DataType[]>([])
   const loading = ref(false)
+  const error = ref<string | null>(null)
   
-  const fetchArticles = async (params) => {
-    // 实现逻辑
-  }
+  // Getters
+  const sortedData = computed(() => [...])
   
-  return { articles, loading, fetchArticles }
+  // Actions
+  const fetchData = async () => { ... }
+  const createData = async () => { ... }
+  const updateData = async () => { ... }
+  const deleteData = async () => { ... }
+  
+  return { data, loading, error, sortedData, fetchData, createData, updateData, deleteData }
 })
 ```
 
-## 组件通信模式
-```typescript
-// 保持筛选状态的分页
-const handlePageChange = (newPage: number) => {
-  const params = {
-    page: newPage,
-    status: filterStatus.value,     // 保持状态
-    category: filterCategory.value  // 保持分类
+## 📈 性能优化
+
+### 前端优化
+
+- 计算属性缓存
+- 组件懒加载
+- 图片懒加载
+- API请求去重
+
+### 代码分割
+
+- 路由级别代码分割
+- 组件级别按需加载
+
+## 🔒 质量保证
+
+### 代码质量
+
+- TypeScript类型安全
+- ESLint代码规范
+- 组件化开发
+- 可复用性设计
+
+### 数据安全
+
+- 表单输入验证
+- XSS防护（富文本内容处理）
+- 操作权限控制
+
+## 🚀 部署配置
+
+### 开发环境
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "json-server --watch db.json --port 3001"
   }
-  loadArticles(params)
 }
 ```
+
+### 环境变量
+
+```env
+VITE_API_BASE_URL=http://localhost:3001
+```
+
+## 📝 开发规范
+
+### 提交信息规范
+
+- `feat:` - 新功能
+- `fix:` - Bug修复
+- `docs:` - 文档更新
+- `style:` - 代码格式
+- `refactor:` - 代码重构
+
+### 组件开发规范
+
+- 使用Composition API
+- TypeScript类型定义
+- 组件Props类型声明
+- 统一的样式结构
+
+---
+
+**📅 最后更新**: $(2025年11月24日)  
+**🔖 当前版本**: v1.1.0  
+**✅ 状态**: 核心功能已完成，稳定运行

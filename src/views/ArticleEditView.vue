@@ -43,8 +43,9 @@
         <!-- 文章内容 -->
         <el-form-item label="文章内容" prop="content">
           <div class="editor-container">
-            <!-- Tiptap 富文本编辑器 -->
-            <TiptapEditor v-model="formData.content" :height="500" @change="handleContentChange" />
+            <!-- 使用新的 Markdown 编辑器 -->
+            <MarkdownEditor v-model="formData.content" :height="500" @change="handleContentChange"
+              @modeChange="handleEditorModeChange" />
           </div>
         </el-form-item>
 
@@ -127,6 +128,8 @@ import { computed, onMounted, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import TiptapEditor from '@/components/TiptapEditor.vue'
+
+import MarkdownEditor from '@/components/MarkdownEditor.vue'
 
 
 // ========== 路由和Store初始化 ==========
@@ -292,6 +295,12 @@ const loadArticleData = async () => {
 const handleContentChange = (content: string) => {
   console.log('内容已更新，HTML字符数:', content.length)
   // 这里可以添加自动保存草稿的逻辑
+}
+
+// 添加编辑器模式变化处理
+const handleEditorModeChange = (mode: string) => {
+  console.log(`编辑器模式切换为: ${mode}`)
+  // 这里可以添加模式切换时的特殊处理
 }
 
 // 插入内容模板
